@@ -4,7 +4,7 @@
     padding: 0;
     font-family: 'Comfortaa', sans-serif;
     color: white;
-    background-color: #080808;
+    background-color: transparent;
     object-fit: fill;
 }
 
@@ -13,30 +13,55 @@ html {
     scrollbar-color: #080808;
     scrollbar-width: 5px;
     user-select: none;
+    background-image: url('assets/images/bg.png');
+    background-size: cover;
+    background-position: 40%;
 }
 
 ::-webkit-scrollbar {
-    background: #080808;
+    background-color: transparent;
     width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #101010;
+    background: #080808;
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #141414;
+    background: #101010;
 }
 
 ::-webkit-scrollbar-button {
-    background: #080808;
+    background: transparent;
+}
+
+body {
+    display: grid;
+    position: relative;
+    overflow: overlay;
 }
 
 body:hover {
     cursor: default;
 }
 
+a {
+    display: -webkit-box;
+    text-decoration: none;
+}
+
+a:hover {
+    /* color: #ff5499; */
+    cursor: pointer;
+    background: linear-gradient(90deg, rgba(255,27,252,1) 0%, rgba(239,10,106,1) 100%);
+    background-clip: content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/*! ------NAV BAR------ */
 nav {
     height: 5rem;
     display: flex;
@@ -44,7 +69,6 @@ nav {
     align-items: center;
     padding-left: 1vw;
     padding-right: 1vw;
-    background-color: transparent;
     position: sticky;
     top: 0;
 }
@@ -78,9 +102,16 @@ nav {
     display: none;
 }
 
+
+/*! ------HERO SECTION------ */
+.hero {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
 .hero-container {
-    height: auto;
-    margin-top: 10vw;
+    margin-bottom: 20vh;
 }
 
 .hero-info {
@@ -91,12 +122,18 @@ nav {
     font-size: 1.2rem;
 }
 
-.hero-info button{
-    font-size: 0.9rem;
+.hero-info h1{
+    font-size: 5rem;
+    text-align: center;
+}
+
+.hero-info a{
+    display: inline;
+    font-size: 1.2rem;
     border-color: transparent;
 }
 
-.hero-info button:hover{
+.hero-info a:hover{
     cursor: pointer;
     font-weight: bold;
     background: linear-gradient(90deg, rgba(255,27,252,1) 0%, rgba(239,10,106,1) 100%);
@@ -105,20 +142,92 @@ nav {
     -webkit-text-fill-color: transparent;
 }
 
-a {
-    display: -webkit-box;
-    text-decoration: none;
+.btt-arrow {
+    position: fixed;
+    cursor: pointer;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    opacity: 25%;
+    display: flex;
 }
 
-a:hover {
-    /* color: #ff5499; */
-    cursor: pointer;
+.btt-arrow:hover {
+    opacity: 75%;
+}
+
+
+/*! ------ABOUT SECTION------ */
+.about {
+    display: grid;
+    place-content: center;
+}
+
+.about-container {
+    height: 100vh;
+    margin-top: 25vh;
+}
+
+.about-info {
+    text-align: center;
+    margin: auto;
+    width: 50vw;
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.about-info img {
+    width:10rem; 
+    height:10rem; 
+    border-radius: 500px;
+}
+
+.designer, .programmer {
+    font-weight: bold;
     background: linear-gradient(90deg, rgba(255,27,252,1) 0%, rgba(239,10,106,1) 100%);
     background-clip: content-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+
+/*! ------CONTACT SECTION------  */
+.contact-info {
+    height: 84vh;
+    margin: 4vw;
+    padding: 20px;
+}
+
+.contact-info p {
+    font-size: 1.3rem;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #141414;
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical
+}
+  
+input[type=submit] {
+    background-color: #080808;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+  
+input[type=submit]:hover {
+    background: linear-gradient(90deg, rgba(255,27,252,1) 0%, rgba(239,10,106,1) 100%);
+}
+
+
+/*! ------FOOTER------ */
 footer {
     position: absolute;
     bottom: 0;
@@ -127,10 +236,10 @@ footer {
     height: 50px;
     padding: 0.7rem;
     width: 100%;
-    /* background-color: black; */
 }
 
 
+/*! ------MEDIA QUERIES------ */
 @media screen and (max-width: 650px) {
     .nav-text {
         display: none;
@@ -147,5 +256,17 @@ footer {
     nav {
         padding-left: 2vw;
         padding-right: 3vw;
+    }
+    .hero {
+        min-height: 90vh;
+    }
+    .hero-info h1{
+        font-size: 3rem;
+    }
+    .hero-info a{
+        font-size: 1rem;
+    }
+    footer a {
+        font-size: 0.9rem;
     }
 }

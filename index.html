@@ -14,17 +14,19 @@
         <link rel="manifest" href="./assets/favicon/site.webmanifest">
     </head>
 
+    <a name="top"></a>
+
     <body>
         <nav>
             <a href="index.html"><div class="logo">Gingerosis Designs</div></a>
             <div class="nav-items">
                 <span class="nav-text">
-                    <a href="about/about.html">About</a>
-                    <a href="contact/contact.html">Contact</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
                 </span>
                 <span class="nav-icons">
-                    <a href="about/about.html"><img src="assets/images/about_icon1.png"></a>
-                    <a href="contact/contact.html"><img src="assets/images/mail_icon1.png"></a>
+                    <a href="#about"><img src="assets/images/about_icon1.png"></a>
+                    <a href="#contact"><img src="assets/images/mail_icon1.png"></a>
                 </span>
             </div>
         </nav>
@@ -32,15 +34,50 @@
         <section class="hero">
             <div class="hero-container">
                 <div class="hero-info">
-                    <br><br><br><h1>Welcome</h1> <br><br><br>
-                    <!-- <p> I'm a self-taught <span class="designer">graphic designer</span> 
-                        and <span class="programmer">programmer</span> with a Bachelor's 
-                        Degree in Computer Science & Engineering from UC Merced. 
-                    </p> <br><br> -->
-                    <button>Click here to see my work</button>
+                    <h1>Welcome</h1><br><br><br>
+                    <a href="https://www.etsy.com/shop/GingerosisDesigns"target="_blank">Click here to see my work</a>
                 </div>
             </div>
         </section>
+
+        <a name="about"></a>
+        <section class="about">
+            <div class="about-container">
+                <div class="about-info">
+                    <img src="assets/images/pfp4.png"> <br><br>
+                    <h1>Hi, I'm Mason.</h1> <br><br><br>
+                    <p> I'm a self-taught <span class="designer">graphic designer</span> 
+                        and <span class="programmer">programmer</span> with a Bachelor's 
+                        Degree in Computer Science & Engineering from UC Merced. 
+                    </p> <br><br>
+                </div>
+            </div>
+        </section>
+
+        <a name="contact"></a><br><br><br><br>
+        <section class="contact">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p>Send me an email: gingerosisdesigns@gmail.com</p><br><br>
+                    <form action="action_page.php">
+                      <label for="name">&nbsp;&nbsp;&nbsp;&nbsp;Name</label>
+                      <input type="text" id="name" name="name" placeholder="&nbsp;&nbsp;Your name">
+                  
+                      <label for="email">&nbsp;&nbsp;&nbsp;&nbsp;Email Address</label>
+                      <input type="text" id="email" name="email" placeholder="&nbsp;&nbsp;Your email address">
+                  
+                      <label for="message">&nbsp;&nbsp;&nbsp;&nbsp;Message</label>
+                      <textarea id="message" name="message" placeholder="&nbsp;&nbsp;Write something..." style="height:30vh"></textarea>
+                  
+                      <input type="submit" value="Send">
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <div class="btt-arrow">
+            <a href="#top"><img src="assets/images/arrow.png"></a>
+        </div>
     </body>
 
     <footer id="footer">
