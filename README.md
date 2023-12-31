@@ -1,3 +1,3 @@
-# Simple Portfolio Website
+# Portfolio Website
 
 made by Gingerosis
