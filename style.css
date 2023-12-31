@@ -10,30 +10,29 @@
 
 html {
     scroll-behavior: smooth;
-    scrollbar-color: #080808;
-    scrollbar-width: 5px;
     user-select: none;
     background-image: url('assets/images/bg.png');
     background-size: cover;
     background-position: 40%;
 }
 
+/*! ------SCROLLBAR------ */
 ::-webkit-scrollbar {
-    background-color: transparent;
     width: 10px;
 }
-
+::-webkit-scrollbar-track {
+    background: #020202;
+}
 ::-webkit-scrollbar-thumb {
     background: #080808;
-    border-radius: 10px;
+    border-radius: 5px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
     background: #101010;
 }
-
 ::-webkit-scrollbar-button {
-    background: transparent;
+    background: #020202;
+    height: 3px;
 }
 
 body {
@@ -47,17 +46,16 @@ body:hover {
 }
 
 a {
-    display: -webkit-box;
     text-decoration: none;
 }
 
-a:hover {
-    /* color: #ff5499; */
+nav a:hover, .hero a:hover, .links-box a:hover span {
     cursor: pointer;
     background: linear-gradient(90deg, rgba(255,27,252,1) 0%, rgba(239,10,106,1) 100%);
     background-clip: content-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-weight: bolder;
 }
 
 
@@ -72,14 +70,12 @@ nav {
     position: sticky;
     top: 0;
 }
-
 .logo {
     color: white;
     font-size: 1.5rem;
     padding: 0 2rem;
     display: -webkit-flex;
 }
-
 .logo:hover {
     background: linear-gradient(90deg, rgba(255,27,252,1) 0%, rgba(239,10,106,1) 100%);
     background-clip: content-box;
@@ -87,17 +83,14 @@ nav {
     -webkit-text-fill-color: transparent;
     font-weight: 500;
 }
-
 .nav-text a{
     text-decoration: none;
     padding: 0 1.5rem;
     display: -webkit-inline-box;
 }
-
 .nav-text a:hover, footer a:hover{
     font-weight: bold;
 }
-
 .nav-icons {
     display: none;
 }
@@ -109,11 +102,9 @@ nav {
     display: grid;
     place-content: center;
 }
-
 .hero-container {
     margin-bottom: 20vh;
 }
-
 .hero-info {
     text-align: center;
     margin: auto;
@@ -121,18 +112,15 @@ nav {
     line-height: 2rem;
     font-size: 1.2rem;
 }
-
 .hero-info h1{
     font-size: 5rem;
     text-align: center;
 }
-
 .hero-info a{
     display: inline;
     font-size: 1.2rem;
     border-color: transparent;
 }
-
 .hero-info a:hover{
     cursor: pointer;
     font-weight: bold;
@@ -142,32 +130,16 @@ nav {
     -webkit-text-fill-color: transparent;
 }
 
-.btt-arrow {
-    position: fixed;
-    cursor: pointer;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9999;
-    opacity: 25%;
-    display: flex;
-}
-
-.btt-arrow:hover {
-    opacity: 75%;
-}
-
 
 /*! ------ABOUT SECTION------ */
 .about {
     display: grid;
     place-content: center;
 }
-
 .about-container {
-    height: 100vh;
+    height: 85vh;
     margin-top: 25vh;
 }
-
 .about-info {
     text-align: center;
     margin: auto;
@@ -175,33 +147,125 @@ nav {
     line-height: 1.5rem;
     font-size: 1.2rem;
 }
-
 .about-info img {
     width:10rem; 
     height:10rem; 
     border-radius: 500px;
 }
-
-.designer, .programmer {
+.about-info p span {
     font-weight: bold;
     background: linear-gradient(90deg, rgba(255,27,252,1) 0%, rgba(239,10,106,1) 100%);
     background-clip: content-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.text-animation {
+    overflow: hidden;
+    font-family: Comfortaa;
+    border-right: 3px solid rgba(239,10,106,1);
+    white-space: nowrap;
+    width: 210px;
+    max-width: 210px;
+    height: 30px;
+    margin: 0 auto;
+    padding-top: 4px;
+    top: 12px;
+    animation: typing 10s steps(22, end) infinite, cursor 0.5s step-end infinite;
+}
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    25%, 90% {
+        width: 60%;
+    }
+    100% {
+        width: 0;
+    }
+}
+@keyframes cursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #ea11a9;
+    }
+}
+
+
+
+/*! ------LINKS SECTION------ */
+.links {
+    display: grid;
+    place-content: center;
+}
+.links-container {
+    text-align: center;
+    height: 85vh;
+    width: 70vw;
+    margin-top: 15vh;
+}
+.links-info {
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: auto auto;
+    gap: 5vw;
+}
+.links-container h2 {
+    margin-bottom: 10vh;
+}
+.links-box {
+    height: 200px;
+    width: 300px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border: solid #a4a4a428 1px;
+    border-radius: 25px;
+}
+.links-box:hover {
+    transform: scale(1.1);
+    border: solid #a4a4a400 1px;
+}
+.links-box:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    background: linear-gradient(135deg, rgba(255,27,252,1) 0%, rgba(239,10,106,1) 100%) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+}
+.links-inside {
+    position: relative;
+    display: block;
+    height: 200px;
+    width: 300px;
+    padding: 50px 25px;
+    z-index: 2;
+    border-radius: 20px;
+    align-items: center;
+}
+.links-inside span {
+    font-size: 1.7rem;
+    font-weight: bold;
+}
 
 
 /*! ------CONTACT SECTION------  */
 .contact-info {
-    height: 84vh;
+    height: 85vh;
     margin: 4vw;
     padding: 20px;
 }
-
 .contact-info p {
     font-size: 1.3rem;
 }
-
 input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
@@ -212,7 +276,6 @@ input[type=text], select, textarea {
     margin-bottom: 16px;
     resize: vertical
 }
-  
 input[type=submit] {
     background-color: #080808;
     color: white;
@@ -221,9 +284,23 @@ input[type=submit] {
     border-radius: 20px;
     cursor: pointer;
 }
-  
 input[type=submit]:hover {
     background: linear-gradient(90deg, rgba(255,27,252,1) 0%, rgba(239,10,106,1) 100%);
+}
+
+
+/*! ------BACK TO TOP BUTTON------ */
+.btt-arrow {
+    position: fixed;
+    cursor: pointer;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    opacity: 25%;
+    display: flex;
+}
+.btt-arrow:hover {
+    opacity: 75%;
 }
 
 
