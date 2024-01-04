@@ -139,6 +139,7 @@ nav {
 }
 .about-container {
     height: 85vh;
+    width:90vw;
     margin-top: 25vh;
 }
 .about-info {
@@ -171,7 +172,7 @@ nav {
     margin: 0 auto;
     padding-top: 4px;
     top: 12px;
-    animation: typing 10s steps(22, end) infinite, cursor 0.5s step-end infinite;
+    animation: typing 10s steps(30, end) infinite, cursor 0.5s step-end infinite;
 }
 @keyframes typing {
     0% {
@@ -325,7 +326,10 @@ footer {
     .nav-icons {
         display: inline-flex;
         gap: 15px;
-        transform: scale(0.7);
+    }
+    .nav-icons img {
+        width: 30px;
+        height: 30px;
     }
     .logo {
         font-size: 1.3rem;
@@ -343,6 +347,42 @@ footer {
     }
     .hero-info a{
         font-size: 1rem;
+    }
+    .text-animation {
+        max-width: 210px;
+        width: 210px;
+        animation: typing 4s steps(15, end) infinite, cursor 0.5s step-end infinite;
+    }
+    @keyframes typing {
+        0% {
+            width: 0;
+        }
+        25%, 90% {
+            width: 90%;
+        }
+        100% {
+            width: 0;
+        }
+    }
+    .links-info{
+        grid-template-columns: min-content;
+    }
+    .links-box {
+        width: 60vw;
+        height: 133px;
+        font-size: 16px;
+    }
+    .links-inside{
+        width: 60vw;
+        height: 133px;
+        padding: 10px;
+    }
+    .links-box span{
+        font-size: 1.4rem;
+
+    }
+    .links-container h2 {
+        margin-bottom: 5vh;
     }
     footer a {
         font-size: 0.9rem;
